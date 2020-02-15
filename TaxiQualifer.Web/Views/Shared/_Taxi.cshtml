@@ -1,0 +1,11 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TaxiQualifer.Web.Data.Entities.TaxiEntity
+
+<div class="form-group">
+    <label asp-for="Plaque" class="control-label"></label>
+    <input asp-for="Plaque" class="form-control" />
+    <span asp-validation-for="Plaque" class="text-danger"></span>
+</div>
