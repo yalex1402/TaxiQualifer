@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaxiQualifer.Web.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TaxiQualifer.Web.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<UserEntity>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -21,6 +22,8 @@ namespace TaxiQualifer.Web.Data
             .HasIndex(t => t.Plaque)
             .IsUnique();
         }
+
+        public DbSet<UserGroupEntity> UserGroups { get; set; }
 
     }
 }
