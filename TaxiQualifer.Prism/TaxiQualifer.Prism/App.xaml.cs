@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using TaxiQualifer.Common.Services;
 using TaxiQualifer.Prism.ViewModels;
 using TaxiQualifer.Prism.Views;
 using Xamarin.Forms;
@@ -24,8 +25,8 @@ namespace TaxiQualifer.Prism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IGeolocatorService, GeolocatorService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
-
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<TaxiMasterDetailPage, TaxiMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<TaxiHistoryPage, TaxiHistoryPageViewModel>();
