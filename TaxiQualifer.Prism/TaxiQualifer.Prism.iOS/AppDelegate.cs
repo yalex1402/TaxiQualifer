@@ -2,6 +2,7 @@
 using Prism;
 using Prism.Ioc;
 using Syncfusion.SfBusyIndicator.XForms.iOS;
+using Syncfusion.SfRating.XForms.iOS;
 using UIKit;
 
 
@@ -17,6 +18,7 @@ namespace TaxiQualifer.Prism.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
             new SfBusyIndicatorRenderer();
+            new SfRatingRenderer();
             return base.FinishedLaunching(app, options);
         }
     }
