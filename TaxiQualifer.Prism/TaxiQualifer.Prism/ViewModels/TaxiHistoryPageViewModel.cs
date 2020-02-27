@@ -11,6 +11,7 @@ namespace TaxiQualifer.Prism.ViewModels
         private readonly IApiService _apiService;
         private TaxiResponse _taxi;
         private DelegateCommand _checkPlaqueCommand;
+        private bool _isRunning;
 
         public TaxiHistoryPageViewModel(
             INavigationService navigationService,
@@ -19,6 +20,13 @@ namespace TaxiQualifer.Prism.ViewModels
             _apiService = apiService;
             Title = "Taxi History";
         }
+
+        public bool IsRunning
+        {
+            get => _isRunning;
+            set => SetProperty(ref _isRunning, value);
+        }
+
 
         public TaxiResponse Taxi
         {
@@ -50,9 +58,10 @@ namespace TaxiQualifer.Prism.ViewModels
                     "Accept");
                 return;
             }
-
+            IsRunning = true;
             string url = App.Current.Resources["UrlAPI"].ToString();
             Response response = await _apiService.GetTaxiAsync(Plaque, url, "api", "/Taxis");
+            IsRunning = false;
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(

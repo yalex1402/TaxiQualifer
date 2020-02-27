@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Syncfusion.Licensing;
 using TaxiQualifer.Common.Services;
 using TaxiQualifer.Prism.ViewModels;
 using TaxiQualifer.Prism.Views;
@@ -18,8 +19,8 @@ namespace TaxiQualifer.Prism
 
         protected override async void OnInitialized()
         {
+            SyncfusionLicenseProvider.RegisterLicense("MjE2NDM0QDMxMzcyZTM0MmUzMGhXSFduR2V3NzNDY2xGUTVRUk1YNFJjajZTQmV4c3A2ZmlvRjBjYTEwb0E9;MjE2NDM1QDMxMzcyZTM0MmUzMGVpZWhNS1FFQ2c4M1lkaFJFTEhuNjZXbThTZnMrbTNPSUJkRVUwRUlnaFk9");
             InitializeComponent();
-
             await NavigationService.NavigateAsync("TaxiMasterDetailPage/NavigationPage/HomePage");
         }
 
