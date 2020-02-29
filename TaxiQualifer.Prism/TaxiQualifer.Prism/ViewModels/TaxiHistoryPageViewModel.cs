@@ -1,5 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TaxiQualifer.Common.Models;
 using TaxiQualifer.Common.Services;
@@ -8,8 +10,10 @@ namespace TaxiQualifer.Prism.ViewModels
 {
     public class TaxiHistoryPageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private TaxiResponse _taxi;
+        private List<TripItemViewModel> _details;
         private DelegateCommand _checkPlaqueCommand;
         private bool _isRunning;
 
@@ -17,6 +21,7 @@ namespace TaxiQualifer.Prism.ViewModels
             INavigationService navigationService,
             IApiService apiService) : base(navigationService)
         {
+            _navigationService = navigationService;
             _apiService = apiService;
             Title = "Taxi History";
         }
@@ -27,6 +32,11 @@ namespace TaxiQualifer.Prism.ViewModels
             set => SetProperty(ref _isRunning, value);
         }
 
+        public List<TripItemViewModel> Details
+        {
+            get => _details;
+            set => SetProperty(ref _details, value);
+        }
 
         public TaxiResponse Taxi
         {
@@ -79,6 +89,23 @@ namespace TaxiQualifer.Prism.ViewModels
             }
 
             Taxi = (TaxiResponse)response.Result;
+            Details = Taxi.Trips.Select(t => new TripItemViewModel(_navigationService)
+            {
+                EndDate = t.EndDate,
+                Id = t.Id,
+                Qualification = t.Qualification,
+                Remarks = t.Remarks,
+                Source = t.Source,
+                SourceLatitude = t.SourceLatitude,
+                SourceLongitude = t.SourceLongitude,
+                StartDate = t.StartDate,
+                Target = t.Target,
+                TargetLatitude = t.TargetLatitude,
+                TargetLongitude = t.TargetLongitude,
+                TripDetails = t.TripDetails,
+                User = t.User
+            }).ToList();
+
         }
     }
 }

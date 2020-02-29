@@ -23,9 +23,14 @@
                     Text="Check Plaque"/>
             </StackLayout>
             <rating:SfRating HorizontalOptions="Center" 
+                             IsEnabled="False"
                              Margin="0,5"
                              Precision="Exact"
-                             Value="{Binding Taxi.Qualification}" />
+                             Value="{Binding Taxi.Qualification}">
+                <rating:SfRating.RatingSettings>
+                    <rating:SfRatingSettings RatedFill="{StaticResource ColorAccent}"/>
+                </rating:SfRating.RatingSettings>
+            </rating:SfRating>
             <Label FontAttributes="Bold" 
                    FontSize="Large"
                    HorizontalOptions="Center"
@@ -59,13 +64,16 @@
                    Text="Remarks"/>
             </Grid>
 
-            <CollectionView ItemsSource="{Binding Taxi.Trips}">
+            <CollectionView ItemsSource="{Binding Details}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectTripCommand}"/>
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width=".8*" />
                                 <ColumnDefinition Width=".5*" />
@@ -79,6 +87,8 @@
                                Text="{Binding Qualification, StringFormat='{0:N2}'}"
                                VerticalOptions="Center"/>
                             <Label Grid.Column="2"
+                               MaxLines="2"
+                               LineBreakMode="TailTruncation"
                                Text="{Binding Remarks}"
                                VerticalOptions="Center"/>
                             <Image Grid.Column="3" 
