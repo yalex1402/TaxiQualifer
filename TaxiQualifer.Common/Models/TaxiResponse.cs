@@ -13,9 +13,9 @@ namespace TaxiQualifer.Common.Models
 
         public UserResponse User { get; set; }
 
-        public float? Qualification => Trips?.Average(t => t.Qualification);
+        public float Qualification => Trips == null ? 0 : Trips.Average(t => t.Qualification);
 
-        public int? NumberOfTrips => Trips?.Count;
+        public int NumberOfTrips => Trips == null ? 0 : Trips.Count;
 
     }
 }

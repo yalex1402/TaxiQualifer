@@ -6,6 +6,7 @@
              xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="TaxiQualifer.Prism.Views.TaxiHistoryPage"
+             BackgroundColor="{StaticResource ColorBackgroud}"
              Title="{Binding Title}">
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -18,13 +19,8 @@
                    Placeholder="Enter plaque..." 
                    Text="{Binding Plaque}"
                    VerticalOptions="Center"/>
-                <Button BackgroundColor="Navy"
-                    Command="{Binding CheckPlaqueCommand}"
-                    CornerRadius="20"
-                    HeightRequest="40"
-                    Margin="10,0"
-                    Text="Check Plaque"
-                    TextColor="White"/>
+                <Button Command="{Binding CheckPlaqueCommand}"
+                    Text="Check Plaque"/>
             </StackLayout>
             <rating:SfRating HorizontalOptions="Center" 
                              Margin="0,5"
@@ -92,16 +88,16 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
-        <busyindicator:SfBusyIndicator AnimationType="RollingBall" 
-                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
-                	                   AbsoluteLayout.LayoutFlags="All"
-                	                   BackgroundColor="Silver"
-                	                   HorizontalOptions="Center"
-                	                   TextColor="White"
-                	                   IsVisible="{Binding IsRunning}"
-                	                   Title="Loading..."
-                	                   VerticalOptions="Center"
-                	                   ViewBoxWidth = "50" 
-                                       ViewBoxHeight="50"/>
+        <busyindicator:SfBusyIndicator AnimationType="Gear" 
+                                    AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                	                AbsoluteLayout.LayoutFlags="All"
+                	                BackgroundColor="{StaticResource ColorPrimary}"
+                	                HorizontalOptions="Center"
+                	                TextColor="{StaticResource ColorFontInverse}"
+                	                IsVisible="{Binding IsRunning}"
+                	                Title="Loading..."
+                	                VerticalOptions="Center"
+                	                ViewBoxWidth="50"
+                	                ViewBoxHeight="50" />
     </AbsoluteLayout>
 </ContentPage>
