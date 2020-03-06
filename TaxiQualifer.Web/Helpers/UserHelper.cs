@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Threading.Tasks;
 using TaxiQualifer.Common.Enums;
 using TaxiQualifer.Web.Data.Entities;
@@ -47,6 +48,11 @@ namespace TaxiQualifer.Web.Helpers
         public async Task<UserEntity> GetUserAsync(string email)
         {
             return await _userManager.FindByEmailAsync(email);
+        }
+
+        public async Task<UserEntity> GetUserAsync(Guid userId)
+        {
+            return await _userManager.FindByIdAsync(userId.ToString());
         }
 
         public async Task<bool> IsUserInRoleAsync(UserEntity user, string roleName)
