@@ -117,7 +117,7 @@ namespace TaxiQualifer.Web.Controllers
 
         public async Task<IActionResult> ChangeUser()
         {
-            UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+            UserEntity user = await _userHelper.GetUserAsync(User.Identity.Name);
 
             EditUserViewModel model = new EditUserViewModel
             {
@@ -145,7 +145,7 @@ namespace TaxiQualifer.Web.Controllers
                     path = await _imageHelper.UploadImageAsync(model.PictureFile, "Users");
                 }
 
-                UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+                UserEntity user = await _userHelper.GetUserAsync(User.Identity.Name);
 
                 user.Document = model.Document;
                 user.FirstName = model.FirstName;
@@ -156,6 +156,38 @@ namespace TaxiQualifer.Web.Controllers
 
                 await _userHelper.UpdateUserAsync(user);
                 return RedirectToAction("Index", "Home");
+            }
+
+            return View(model);
+        }
+
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userHelper.GetUserAsync(User.Identity.Name);
+                if (user != null)
+                {
+                    var result = await _userHelper.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("ChangeUser");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, result.Errors.FirstOrDefault().Description);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "User no found.");
+                }
             }
 
             return View(model);

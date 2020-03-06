@@ -7,7 +7,7 @@ namespace TaxiQualifer.Web.Helpers
 {
     public interface IUserHelper
     {
-        Task<UserEntity> GetUserByEmailAsync(string email);
+        Task<UserEntity> GetUserAsync(string email);
 
         Task<IdentityResult> AddUserAsync(UserEntity user, string password);
 
