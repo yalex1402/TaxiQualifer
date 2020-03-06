@@ -3,7 +3,7 @@ using TaxiQualifer.Web.Helpers;
 using TaxiQualifer.Web.Models;
 using System.Linq;
 using System.Threading.Tasks;
-
+using TaxiQualifer.Web.Data.Entities;
 
 namespace TaxiQualifer.Web.Controllers
 {
@@ -112,6 +112,52 @@ namespace TaxiQualifer.Web.Controllers
             }
 
             model.UserTypes = _combosHelper.GetComboRoles();
+            return View(model);
+        }
+
+        public async Task<IActionResult> ChangeUser()
+        {
+            UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+
+            EditUserViewModel model = new EditUserViewModel
+            {
+                Address = user.Address,
+                Document = user.Document,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                PicturePath = user.PicturePath
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeUser(EditUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                string path = model.PicturePath;
+
+                if (model.PictureFile != null)
+                {
+                    path = await _imageHelper.UploadImageAsync(model.PictureFile, "Users");
+                }
+
+                UserEntity user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
+
+                user.Document = model.Document;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Address = model.Address;
+                user.PhoneNumber = model.PhoneNumber;
+                user.PicturePath = path;
+
+                await _userHelper.UpdateUserAsync(user);
+                return RedirectToAction("Index", "Home");
+            }
+
             return View(model);
         }
 
