@@ -187,7 +187,7 @@ namespace TaxiQualifer.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter plaque....
+        ///   Looks up a localized string similar to ABC123.
         /// </summary>
         public static string PlaquePlaceHolder {
             get {

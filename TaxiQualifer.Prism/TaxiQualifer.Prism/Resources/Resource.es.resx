@@ -120,14 +120,14 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
   <data name="TaxiHistory" xml:space="preserve">
     <value>Historia del taxi</value>
   </data>
   <data name="PlaqueError1" xml:space="preserve">
-    <value>Debes entrar una placa.</value>
-  </data>
-  <data name="Accept" xml:space="preserve">
-    <value>Aceptar</value>
+    <value>Debes entrar en una placa.</value>
   </data>
   <data name="PlaqueError2" xml:space="preserve">
     <value>La placa debe comenzar con tres letras y terminar con tres números.</value>
@@ -139,7 +139,7 @@
     <value>Placa</value>
   </data>
   <data name="PlaquePlaceHolder" xml:space="preserve">
-    <value>Entrar placa...</value>
+    <value>ABC123</value>
   </data>
   <data name="CheckPlaque" xml:space="preserve">
     <value>Comprobar placa</value>
@@ -148,7 +148,7 @@
     <value>Calificación</value>
   </data>
   <data name="NumberOfTrips" xml:space="preserve">
-    <value>Número de viajes</value>
+    <value>Número de Viajes</value>
   </data>
   <data name="Driver" xml:space="preserve">
     <value>Conductor</value>
@@ -157,7 +157,7 @@
     <value>Fecha de inicio</value>
   </data>
   <data name="Score" xml:space="preserve">
-    <value>Nota</value>
+    <value>*</value>
   </data>
   <data name="Remarks" xml:space="preserve">
     <value>Notas</value>
@@ -175,13 +175,13 @@
     <value>Ver historial de taxis</value>
   </data>
   <data name="AdminMyUserGroup" xml:space="preserve">
-    <value>Administrar mi grupo de usuarios</value>
+    <value>Admin mi grupo de usuarios</value>
   </data>
   <data name="ModifyUser" xml:space="preserve">
     <value>Modificar usuario</value>
   </data>
   <data name="ReportAnIncident" xml:space="preserve">
-    <value>Informar una incidencia</value>
+    <value>Informar incidencia</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Iniciar sesión</value>

@@ -117,73 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Error" xml:space="preserve">
-    <value>Errore</value>
+  <data name="UserNotFoundError" xml:space="preserve">
+    <value>User doesn't exists.</value>
   </data>
-  <data name="Accept" xml:space="preserve">
-    <value>Accettare</value>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>User already exists.</value>
   </data>
-  <data name="TaxiHistory" xml:space="preserve">
-    <value>Storia dei taxi</value>
+  <data name="EmailConfirmationSubject" xml:space="preserve">
+    <value>Email confirmation</value>
   </data>
-  <data name="PlaqueError1" xml:space="preserve">
-    <value>Devi inserire una targa</value>
+  <data name="EmailConfirmationBody" xml:space="preserve">
+    <value>To allow the user, please click on this link:</value>
   </data>
-  <data name="PlaqueError2" xml:space="preserve">
-    <value>La placca deve iniziare con tre lettere e terminare con tre numeri</value>
+  <data name="EmailConfirmationSent" xml:space="preserve">
+    <value>A Confirmation email was sent. Please confirm your account and log into the App.</value>
   </data>
-  <data name="ConnectionError" xml:space="preserve">
-    <value>Controlla la connessione Internet.</value>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Confirm Email</value>
   </data>
-  <data name="Plaque" xml:space="preserve">
-    <value>Targa</value>
+  <data name="RecoverPasswordSubject" xml:space="preserve">
+    <value>Recover Password</value>
   </data>
-  <data name="PlaquePlaceHolder" xml:space="preserve">
-    <value>Entra nella targa...!</value>
+  <data name="RecoverPasswordBody" xml:space="preserve">
+    <value>To reset the password click in this link:</value>
   </data>
-  <data name="CheckPlaque" xml:space="preserve">
-    <value>Controlla la targa!</value>
+  <data name="RecoverPasswordEmailSent" xml:space="preserve">
+    <value>An email with instructions to change the password was sent.</value>
   </data>
-  <data name="Qualification" xml:space="preserve">
-    <value>Qualifica</value>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>The password was changed successfully.</value>
   </data>
-  <data name="NumberOfTrips" xml:space="preserve">
-    <value>Numero di viaggi!</value>
+  <data name="UserAlreadyBelogToGroup" xml:space="preserve">
+    <value>The user already belongs to your group.</value>
   </data>
-  <data name="Driver" xml:space="preserve">
-    <value>driver</value>
+  <data name="RequestJoinGroupSubject" xml:space="preserve">
+    <value>Request to join a group</value>
   </data>
-  <data name="StartDate" xml:space="preserve">
-    <value>Data di inizio</value>
+  <data name="TheUser" xml:space="preserve">
+    <value>The user</value>
   </data>
-  <data name="Score" xml:space="preserve">
-    <value>Punteggio</value>
+  <data name="RequestJoinGroupBody" xml:space="preserve">
+    <value>has requested that you be a member of their user group in the TAXI application.</value>
   </data>
-  <data name="Remarks" xml:space="preserve">
-    <value>Note:</value>
+  <data name="WishToAccept" xml:space="preserve">
+    <value>If you wish to accept, click here: </value>
   </data>
-  <data name="Loading" xml:space="preserve">
-    <value>Caricamento in corso...</value>
+  <data name="WishToReject" xml:space="preserve">
+    <value>If you wish to reject, click here: </value>
   </data>
-  <data name="StartTrip" xml:space="preserve">
-    <value>Inizia il viaggio</value>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
   </data>
-  <data name="NewTrip" xml:space="preserve">
-    <value>Nuovo viaggio</value>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
   </data>
-  <data name="SeeTaxiHistory" xml:space="preserve">
-    <value>Guarda la storia dei taxi!</value>
-  </data>
-  <data name="AdminMyUserGroup" xml:space="preserve">
-    <value>Amministratore del mio gruppo di utenti!</value>
-  </data>
-  <data name="ModifyUser" xml:space="preserve">
-    <value>Modifica utente</value>
-  </data>
-  <data name="ReportAnIncident" xml:space="preserve">
-    <value>Segnala un incidente!</value>
-  </data>
-  <data name="LogIn" xml:space="preserve">
-    <value>Accedi</value>
+  <data name="RequestJoinGroupEmailSent" xml:space="preserve">
+    <value>An email has been sent to the user with your request, we hope to respond soon!</value>
   </data>
 </root>

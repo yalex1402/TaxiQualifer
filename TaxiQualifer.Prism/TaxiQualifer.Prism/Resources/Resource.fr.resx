@@ -98,16 +98,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="TaxiHistory" xml:space="preserve">
-    <value>Histoire du taxi</value>
-  </data>
-  <data name="PlaqueError1" xml:space="preserve">
-    <value>Vous devez entrer une plaque.</value>
+    <value>Errour</value>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Accepter</value>
+  </data>
+  <data name="TaxiHistory" xml:space="preserve">
+    <value>L histoire du taxi!</value>
+  </data>
+  <data name="PlaqueError1" xml:space="preserve">
+    <value>Vous devez entrer une plaque.</value>
   </data>
   <data name="PlaqueError2" xml:space="preserve">
     <value>La plaque doit commencer par trois lettres et se terminer par trois chiffres.</value>
@@ -116,13 +116,13 @@
     <value>Vérifiez la connexion Internet</value>
   </data>
   <data name="Plaque" xml:space="preserve">
-    <value>Étiquette</value>
+    <value>Plaque</value>
   </data>
   <data name="PlaquePlaceHolder" xml:space="preserve">
-    <value>Entrez la plaque ...</value>
+    <value>ABC123</value>
   </data>
   <data name="CheckPlaque" xml:space="preserve">
-    <value>Vérifiez la plaque</value>
+    <value>Vérifiez la plaque!</value>
   </data>
   <data name="Qualification" xml:space="preserve">
     <value>Qualification</value>
@@ -131,7 +131,7 @@
     <value>Nombre de courses</value>
   </data>
   <data name="Driver" xml:space="preserve">
-    <value>Pilote</value>
+    <value>pilote</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Date de début</value>
@@ -140,10 +140,10 @@
     <value>Score</value>
   </data>
   <data name="Remarks" xml:space="preserve">
-    <value>Remarques</value>
+    <value>Remarques :</value>
   </data>
   <data name="Loading" xml:space="preserve">
-    <value>Chargement</value>
+    <value>Chargement...</value>
   </data>
   <data name="StartTrip" xml:space="preserve">
     <value>Commencer le trajet</value>
@@ -152,10 +152,10 @@
     <value>Nouveau trip</value>
   </data>
   <data name="SeeTaxiHistory" xml:space="preserve">
-    <value>Voir l&amp;#39;historique des taxis</value>
+    <value>Voir l&amp;#39;historique des taxis!</value>
   </data>
   <data name="AdminMyUserGroup" xml:space="preserve">
-    <value>Admin mon groupe d&amp;#39;utilisateurs</value>
+    <value>Admin mon groupe d&amp;#39;utilisateurs!</value>
   </data>
   <data name="ModifyUser" xml:space="preserve">
     <value>Modifier l'utilisateur</value>

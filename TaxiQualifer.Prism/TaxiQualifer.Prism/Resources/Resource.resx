@@ -139,7 +139,7 @@
     <value>Plaque</value>
   </data>
   <data name="PlaquePlaceHolder" xml:space="preserve">
-    <value>Enter plaque...</value>
+    <value>ABC123</value>
   </data>
   <data name="CheckPlaque" xml:space="preserve">
     <value>Check Plaque</value>
