@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using TaxiQualifer.Common.Models;
 
+
 namespace TaxiQualifer.Prism.ViewModels
 {
     public class TaxiMasterDetailPageViewModel : ViewModelBase
@@ -26,19 +27,19 @@ namespace TaxiQualifer.Prism.ViewModels
                 {
                     Icon = "ic_airport_shuttle",
                     PageName = "HomePage",
-                    Title = "New trip"
+                    Title = "New Trip"
                 },
                 new Menu
                 {
                     Icon = "ic_local_taxi",
                     PageName = "TaxiHistoryPage",
-                    Title = "See taxi history"
+                    Title = "See Taxi History"
                 },
                 new Menu
                 {
                     Icon = "ic_people",
                     PageName = "GroupPage",
-                    Title = "Admin my user group"
+                    Title = "Admin my group family"
                 },
                 new Menu
                 {
@@ -50,7 +51,7 @@ namespace TaxiQualifer.Prism.ViewModels
                 {
                     Icon = "ic_report",
                     PageName = "ReportPage",
-                    Title = "Report an incident"
+                    Title = "Report an Incident"
                 },
                 new Menu
                 {
