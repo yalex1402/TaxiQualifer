@@ -30,7 +30,6 @@ namespace TaxiQualifer.Web.Controllers.API
             IImageHelper imageHelper,
             IConverterHelper converterHelper)
         {
-            _dataContext = dataContext;
             _userHelper = userHelper;
             _mailHelper = mailHelper;
             _imageHelper = imageHelper;

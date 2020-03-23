@@ -15,6 +15,12 @@ namespace TaxiQualifer.Web.Data
 
         public DbSet<TripDetailEntity> TripDetails { get; set; }
 
+        public DbSet<UserGroupEntity> UserGroups { get; set; }
+
+        public DbSet<UserGroupDetailEntity> UserGroupDetails { get; set; }
+
+        public DbSet<UserGroupRequestEntity> UserGroupRequests { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -23,7 +29,8 @@ namespace TaxiQualifer.Web.Data
             .IsUnique();
         }
 
-        public DbSet<UserGroupEntity> UserGroups { get; set; }
+        
+
 
     }
 }

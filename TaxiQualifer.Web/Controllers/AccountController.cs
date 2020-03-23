@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using TaxiQualifer.Common.Enums;
+using TaxiQualifer.Web.Data;
 using TaxiQualifer.Web.Data.Entities;
 using TaxiQualifer.Web.Helpers;
 using TaxiQualifer.Web.Models;
@@ -20,18 +24,21 @@ namespace TaxiQualifer.Web.Controllers
         private readonly ICombosHelper _combosHelper;
         private readonly IConfiguration _configuration;
         private readonly IMailHelper _mailHelper;
+        private readonly DataContext _dataContext;
 
         public AccountController(IUserHelper userHelper,
                                     IImageHelper imageHelper,
                                     ICombosHelper combosHelper,
                                     IConfiguration configuration,
-                                    IMailHelper mailHelper)
+                                    IMailHelper mailHelper,
+                                    DataContext dataContext)
         {
             _userHelper = userHelper;
             _imageHelper = imageHelper;
             _combosHelper = combosHelper;
             _configuration = configuration;
             _mailHelper = mailHelper;
+            _dataContext = dataContext;
         }
 
         public IActionResult NotAuthorized()
@@ -177,13 +184,13 @@ namespace TaxiQualifer.Web.Controllers
             return View(model);
         }
 
-        public IActionResult ChangePassword()
+        public IActionResult ChangePasswordMVC()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        public async Task<IActionResult> ChangePasswordMVC(ChangePasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -271,13 +278,13 @@ namespace TaxiQualifer.Web.Controllers
             return View();
         }
 
-        public IActionResult RecoverPassword()
+        public IActionResult RecoverPasswordMVC()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> RecoverPassword(RecoverPasswordViewModel model)
+        public async Task<IActionResult> RecoverPasswordMVC(RecoverPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -330,6 +337,81 @@ namespace TaxiQualifer.Web.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> ConfirmUserGroup(int requestId, string token)
+        {
+            if (requestId == 0 || string.IsNullOrEmpty(token))
+            {
+                return NotFound();
+            }
+
+            UserGroupRequestEntity userGroupRequest = await _dataContext.UserGroupRequests
+                .Include(ugr => ugr.ProposalUser)
+                .Include(ugr => ugr.RequiredUser)
+                .FirstOrDefaultAsync(ugr => ugr.Id == requestId &&
+                                            ugr.Token == new Guid(token));
+            if (userGroupRequest == null)
+            {
+                return NotFound();
+            }
+
+            await AddGroupAsync(userGroupRequest.ProposalUser, userGroupRequest.RequiredUser);
+            await AddGroupAsync(userGroupRequest.RequiredUser, userGroupRequest.ProposalUser);
+
+            userGroupRequest.Status = UserGroupStatus.Accepted;
+            _dataContext.UserGroupRequests.Update(userGroupRequest);
+            await _dataContext.SaveChangesAsync();
+            return View();
+        }
+
+        private async Task AddGroupAsync(UserEntity proposalUser, UserEntity requiredUser)
+        {
+            UserGroupEntity userGroup = await _dataContext.UserGroups
+                .Include(ug => ug.Users)
+                .ThenInclude(u => u.User)
+                .FirstOrDefaultAsync(ug => ug.User.Id == proposalUser.Id);
+            if (userGroup != null)
+            {
+                UserGroupDetailEntity user = userGroup.Users.FirstOrDefault(u => u.User.Id == requiredUser.Id);
+                if (user == null)
+                {
+                    userGroup.Users.Add(new UserGroupDetailEntity { User = requiredUser });
+                }
+
+                _dataContext.UserGroups.Update(userGroup);
+            }
+            else
+            {
+                _dataContext.UserGroups.Add(new UserGroupEntity
+                {
+                    User = proposalUser,
+                    Users = new List<UserGroupDetailEntity>
+                    {
+                        new UserGroupDetailEntity { User = requiredUser }
+                    }
+                });
+            }
+        }
+
+        public async Task<IActionResult> RejectUserGroup(int requestId, string token)
+        {
+            if (requestId == 0 || string.IsNullOrEmpty(token))
+            {
+                return NotFound();
+            }
+
+            UserGroupRequestEntity userGroupRequest = await _dataContext
+                .UserGroupRequests.FirstOrDefaultAsync(ugr => ugr.Id == requestId &&
+                                                        ugr.Token == new Guid(token));
+            if (userGroupRequest == null)
+            {
+                return NotFound();
+            }
+
+            userGroupRequest.Status = UserGroupStatus.Rejected;
+            _dataContext.UserGroupRequests.Update(userGroupRequest);
+            await _dataContext.SaveChangesAsync();
+            return View();
+        }
 
 
     }

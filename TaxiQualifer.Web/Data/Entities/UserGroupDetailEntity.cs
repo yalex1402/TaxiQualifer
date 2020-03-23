@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace TaxiQualifer.Web.Data.Entities
 {
-    public class UserGroupEntity
+    public class UserGroupDetailEntity
     {
         public int Id { get; set; }
 
         public UserEntity User { get; set; }
 
-        public ICollection<UserGroupDetailEntity> Users { get; set; }
+        public UserGroupEntity UserGroup { get; set; }
 
     }
 }

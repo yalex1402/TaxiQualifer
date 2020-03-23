@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TaxiQualifer.Common.Models;
 using TaxiQualifer.Web.Data.Entities;
 
@@ -85,6 +86,50 @@ namespace TaxiQualifer.Web.Helpers
             };
         }
 
+        public List<TripResponseWithTaxi> ToTripResponse(List<TripEntity> tripEntities)
+        {
+            return tripEntities.Select(t => new TripResponseWithTaxi
+            {
+                EndDate = t.EndDate,
+                Id = t.Id,
+                Qualification = t.Qualification,
+                Remarks = t.Remarks,
+                Source = t.Source,
+                SourceLatitude = t.SourceLatitude,
+                SourceLongitude = t.SourceLongitude,
+                StartDate = t.StartDate,
+                Target = t.Target,
+                Taxi = ToTaxiResponse2(t.Taxi),
+                TargetLatitude = t.TargetLatitude,
+                TargetLongitude = t.TargetLongitude,
+                TripDetails = t.TripDetails.Select(td => new TripDetailResponse
+                {
+                    Date = td.Date,
+                    Id = td.Id,
+                    Latitude = td.Latitude,
+                    Longitude = td.Longitude
+                }).ToList()
+            }).ToList();
+        }
+
+        private TaxiResponse ToTaxiResponse2(TaxiEntity taxi)
+        {
+            return new TaxiResponse
+            {
+                Id = taxi.Id,
+                Plaque = taxi.Plaque,
+                User = ToUserResponse(taxi.User)
+            };
+        }
+
+        public List<UserGroupDetailResponse> ToUserGroupResponse(List<UserGroupDetailEntity> users)
+        {
+            return users.Select(u => new UserGroupDetailResponse
+            {
+                Id = u.Id,
+                User = ToUserResponse(u.User)
+            }).ToList();
+        }
 
 
     }
