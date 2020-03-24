@@ -1,23 +1,41 @@
-﻿using Prism.Navigation;
+﻿using Newtonsoft.Json;
+using Prism.Navigation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using TaxiQualifer.Common.Helpers;
 using TaxiQualifer.Common.Models;
-
+using TaxiQualifer.Prism.Helpers;
 
 namespace TaxiQualifer.Prism.ViewModels
 {
     public class TaxiMasterDetailPageViewModel : ViewModelBase
     {
+        private UserResponse _user;
         private readonly INavigationService _navigationService;
 
         public TaxiMasterDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
+            LoadUser();
             LoadMenus();
         }
 
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+
+        public UserResponse User
+        {
+            get => _user;
+            set => SetProperty(ref _user, value);
+        }
+
+        private void LoadUser()
+        {
+            if (Settings.IsLogin)
+            {
+                User = JsonConvert.DeserializeObject<UserResponse>(Settings.User);
+            }
+        }
 
         private void LoadMenus()
         {
@@ -27,7 +45,7 @@ namespace TaxiQualifer.Prism.ViewModels
                 {
                     Icon = "ic_airport_shuttle",
                     PageName = "HomePage",
-                    Title = "New Trip"
+                    Title = Settings.IsLogin ? Languages.Logout : Languages.LogIn
                 },
                 new Menu
                 {

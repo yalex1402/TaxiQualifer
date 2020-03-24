@@ -62,6 +62,24 @@ namespace TaxiQualifer.Prism.Helpers
 
         public static string LogIn => Resource.LogIn;
 
+        public static string Email => Resource.Email;
+
+        public static string EmailPlaceHolder => Resource.EmailPlaceHolder;
+
+        public static string EmailError => Resource.EmailError;
+
+        public static string Password => Resource.Password;
+
+        public static string PasswordError => Resource.PasswordError;
+
+        public static string PasswordPlaceHolder => Resource.PasswordPlaceHolder;
+
+        public static string Register => Resource.Register;
+
+        public static string LoginError => Resource.LoginError;
+
+        public static string Logout => Resource.Logout;
+
     }
 
 }

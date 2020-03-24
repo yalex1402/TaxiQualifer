@@ -12,7 +12,7 @@ namespace TaxiQualifer.Prism.Helpers
     public class TranslateExtension : IMarkupExtension
     {
         private readonly CultureInfo ci;
-        private const string ResourceId = "Taxi.Prism.Resources.Resource";
+        private const string ResourceId = "TaxiQualifer.Prism.Resources.Resource";
         private static readonly Lazy<ResourceManager> ResMgr =
             new Lazy<ResourceManager>(() => new ResourceManager(
                 ResourceId,
