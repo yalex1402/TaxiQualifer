@@ -20,6 +20,11 @@ namespace TaxiQualifer.Common.Models
 
         public string PicturePath { get; set; }
 
+        public string PictureFullPath => string.IsNullOrEmpty(PicturePath)
+                        ? "https://taxiqualiferweb.azurewebsites.net//images/noimage.png"
+                        : $"https://taxiqualiferweb.azurewebsites.net{PicturePath.Substring(1)}";
+
+
         public UserType UserType { get; set; }
 
         public string FullName => $"{FirstName} {LastName}";
