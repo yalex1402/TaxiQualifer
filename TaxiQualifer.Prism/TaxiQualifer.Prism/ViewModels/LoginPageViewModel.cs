@@ -5,6 +5,7 @@ using TaxiQualifer.Common.Helpers;
 using TaxiQualifer.Common.Models;
 using TaxiQualifer.Common.Services;
 using TaxiQualifer.Prism.Helpers;
+using TaxiQualifer.Prism.Views;
 
 namespace TaxiQualifer.Prism.ViewModels
 {
@@ -122,9 +123,11 @@ namespace TaxiQualifer.Prism.ViewModels
 
         }
 
-        private void RegisterAsync()
+        private async void RegisterAsync()
         {
+            await _navigationService.NavigateAsync(nameof(RegisterPage));
         }
+
 
     }
 }
