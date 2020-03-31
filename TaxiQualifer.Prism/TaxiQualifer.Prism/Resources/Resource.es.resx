@@ -303,4 +303,55 @@
   <data name="ForgotPassword" xml:space="preserve">
     <value>¿Olvidaste tu contraseña?</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="UserUpdated" xml:space="preserve">
+    <value>Usuario Actualizado</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nueva contraseña:</value>
+  </data>
+  <data name="ConfirmNewPasswordError" xml:space="preserve">
+    <value>Ingresa la confirmación de tu contraseña.</value>
+  </data>
+  <data name="ConfirmNewPasswordError2" xml:space="preserve">
+    <value>La contraseña y la confirmación no coinciden</value>
+  </data>
+  <data name="ConfirmNewPasswordPlaceHolder" xml:space="preserve">
+    <value>Ingrese la confirmación de la nueva contraseña ...!</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña actual</value>
+  </data>
+  <data name="CurrentPasswordError" xml:space="preserve">
+    <value>Debe introducir su contraseña actual.</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Escriba la contraseña actual.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nueva contraseña</value>
+  </data>
+  <data name="NewPasswordError" xml:space="preserve">
+    <value>'Debe especificar una nueva contraseña';</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Escriba una nueva contraseña</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="EndTrip" xml:space="preserve">
+    <value>Fin de viaje</value>
+  </data>
+  <data name="GeolocationError" xml:space="preserve">
+    <value>No fue posible obtener su dirección actual, intente más tarde.</value>
+  </data>
+  <data name="ConfirmAddress" xml:space="preserve">
+    <value>Confirma tu dirección.!</value>
+  </data>
 </root>

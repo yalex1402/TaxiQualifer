@@ -303,4 +303,55 @@
   <data name="ForgotPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="UserUpdated" xml:space="preserve">
+    <value>User Updated</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="ConfirmNewPasswordError" xml:space="preserve">
+    <value>You must enter a new password confirmation.</value>
+  </data>
+  <data name="ConfirmNewPasswordError2" xml:space="preserve">
+    <value>The new password and the confirmation does not match.</value>
+  </data>
+  <data name="ConfirmNewPasswordPlaceHolder" xml:space="preserve">
+    <value>Enter the confirmation for new password...</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="CurrentPasswordError" xml:space="preserve">
+    <value>You muest enter your current password.</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Enter your current password...</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="NewPasswordError" xml:space="preserve">
+    <value>You must enter a new password.</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Enter a new password...</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="EndTrip" xml:space="preserve">
+    <value>End Trip</value>
+  </data>
+  <data name="GeolocationError" xml:space="preserve">
+    <value>It was not possible to get your current address, please try later.</value>
+  </data>
+  <data name="ConfirmAddress" xml:space="preserve">
+    <value>Confirm your address.</value>
+  </data>
 </root>
