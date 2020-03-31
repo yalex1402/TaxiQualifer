@@ -230,9 +230,9 @@ namespace TaxiQualifer.Web.Controllers
                     {
                         Claim[] claims = new[]
                         {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-                };
+                            new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                        };
 
                         SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Tokens:Key"]));
                         SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
