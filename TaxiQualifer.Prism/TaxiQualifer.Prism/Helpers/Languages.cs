@@ -154,6 +154,13 @@ namespace TaxiQualifer.Prism.Helpers
 
         public static string NewPasswordPlaceHolder => Resource.NewPasswordPlaceHolder;
 
+        public static string GeolocationError => Resource.GeolocationError;
+
+        public static string EndTrip => Resource.EndTrip;
+
+        public static string Source => Resource.Source;
+
+        public static string ConfirmAddress => Resource.ConfirmAddress;
 
     }
 
