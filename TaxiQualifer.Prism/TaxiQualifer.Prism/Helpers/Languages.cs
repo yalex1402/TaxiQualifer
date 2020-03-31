@@ -124,6 +124,11 @@ namespace TaxiQualifer.Prism.Helpers
 
         public static string FromGallery => Resource.FromGallery;
 
+        public static string PasswordRecover => Resource.PasswordRecover;
+
+        public static string ForgotPassword => Resource.ForgotPassword;
+
+
     }
 
 }

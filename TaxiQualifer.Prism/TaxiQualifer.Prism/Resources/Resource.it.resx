@@ -297,4 +297,10 @@
   <data name="FromGallery" xml:space="preserve">
     <value>Da raccolta</value>
   </data>
+  <data name="PasswordRecover" xml:space="preserve">
+    <value>Recupero Password</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Password dimenticata?</value>
+  </data>
 </root>

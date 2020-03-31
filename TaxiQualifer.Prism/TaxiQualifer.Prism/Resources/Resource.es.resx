@@ -297,4 +297,10 @@
   <data name="PictureSource" xml:space="preserve">
     <value>¡Fuente de la imagen!</value>
   </data>
+  <data name="PasswordRecover" xml:space="preserve">
+    <value>Recuperar Contraseña</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>¿Olvidaste tu contraseña?</value>
+  </data>
 </root>
