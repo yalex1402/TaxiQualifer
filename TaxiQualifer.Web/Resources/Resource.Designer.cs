@@ -61,6 +61,15 @@ namespace TaxiQualifer.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Any.
+        /// </summary>
+        public static string Any {
+            get {
+                return ResourceManager.GetString("Any", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The password was changed successfully..
         /// </summary>
         public static string ChangePasswordSuccess {

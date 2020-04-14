@@ -354,4 +354,55 @@
   <data name="ConfirmAddress" xml:space="preserve">
     <value>Conferma il tuo indirizzo.!</value>
   </data>
+  <data name="GenericComment" xml:space="preserve">
+    <value>Commento generico!</value>
+  </data>
+  <data name="CommnetPlaceHolder" xml:space="preserve">
+    <value>Seleziona un commento ....!</value>
+  </data>
+  <data name="Comment1" xml:space="preserve">
+    <value>Ottima assistenza.</value>
+  </data>
+  <data name="Comment2" xml:space="preserve">
+    <value>Autista molto amichevole!</value>
+  </data>
+  <data name="Comment3" xml:space="preserve">
+    <value>Taxi pulito!</value>
+  </data>
+  <data name="Comment4" xml:space="preserve">
+    <value>Taxi sporco o viziato!</value>
+  </data>
+  <data name="Comment5" xml:space="preserve">
+    <value>Cattivo autista!</value>
+  </data>
+  <data name="Comment6" xml:space="preserve">
+    <value>Carica più del previsto!</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Commento</value>
+  </data>
+  <data name="DistanceTraveled" xml:space="preserve">
+    <value>Distanza percorsa</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Ora</value>
+  </data>
+  <data name="ApproximateValue" xml:space="preserve">
+    <value>Valore approssimativo!</value>
+  </data>
+  <data name="QualificationError" xml:space="preserve">
+    <value>È necessario fornire una qualifica</value>
+  </data>
+  <data name="CancelTripConfirm" xml:space="preserve">
+    <value>Sei sicuro di cancellare questo viaggio?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
 </root>

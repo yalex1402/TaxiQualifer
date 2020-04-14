@@ -71,12 +71,12 @@ namespace TaxiQualifer.Prism.ViewModels
             }
             IsRunning = true;
             string url = App.Current.Resources["UrlAPI"].ToString();
-            var connection = await _apiService.CheckConnectionAsync(url);
+            var connection = _apiService.CheckConnection();
             if (!connection)
             {
                 IsRunning = false;
                 await App.Current.MainPage.DisplayAlert(Languages.Error,
-                    Languages.PlaqueError2,
+                    Languages.ConnectionError,
                     Languages.Accept);
                 return;
             }

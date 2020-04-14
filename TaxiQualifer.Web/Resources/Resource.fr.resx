@@ -174,4 +174,7 @@
   <data name="RequestJoinGroupEmailSent" xml:space="preserve">
     <value>Un e-mail a été envoyé à l&amp;#39;utilisateur avec votre demande, nous espérons y répondre prochainement !!</value>
   </data>
+  <data name="Any" xml:space="preserve">
+    <value>N'importe lequel</value>
+  </data>
 </root>
