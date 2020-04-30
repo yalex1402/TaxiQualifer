@@ -66,6 +66,13 @@ namespace TaxiQualifer.Prism.ViewModels
                 },
                 new Menu
                 {
+                    Icon = "ic_location_on",
+                    PageName = "MyTripsPage",
+                    Title = Languages.MyTrips,
+                    IsLoginRequired = true
+                },
+                new Menu
+                {
                     Icon = "ic_people",
                     PageName = "GroupPage",
                     Title = "Admin my group family"

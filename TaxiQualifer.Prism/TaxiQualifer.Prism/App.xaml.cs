@@ -45,6 +45,8 @@ namespace TaxiQualifer.Prism
             containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<StartTripPage, StartTripPageViewModel>();
             containerRegistry.RegisterForNavigation<EndTripPage, EndTripPageViewModel>();
+            containerRegistry.RegisterForNavigation<MyTripsPage, MyTripsPageViewModel>();
+            containerRegistry.RegisterForNavigation<MyTripPage, MyTripPageViewModel>();
         }
     }
 }

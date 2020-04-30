@@ -385,6 +385,15 @@ namespace TaxiQualifer.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End Date.
+        /// </summary>
+        public static string EndDate {
+            get {
+                return ResourceManager.GetString("EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End Trip.
         /// </summary>
         public static string EndTrip {
@@ -543,6 +552,24 @@ namespace TaxiQualifer.Prism.Resources {
         public static string ModifyUser {
             get {
                 return ResourceManager.GetString("ModifyUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Trip.
+        /// </summary>
+        public static string MyTrip {
+            get {
+                return ResourceManager.GetString("MyTrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Trips.
+        /// </summary>
+        public static string MyTrips {
+            get {
+                return ResourceManager.GetString("MyTrips", resourceCulture);
             }
         }
         

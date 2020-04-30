@@ -25,8 +25,14 @@ namespace TaxiQualifer.Prism.ViewModels
                 Settings.User = null;
                 Settings.Token = null;
             }
-
-            await _navigationService.NavigateAsync($"/TaxiMasterDetailPage/NavigationPage/{PageName}");
+            if (!Settings.IsLogin)
+            {
+                await _navigationService.NavigateAsync($"/TaxiMasterDetailPage/NavigationPage/LoginPage");
+            }
+            else
+            {
+                await _navigationService.NavigateAsync($"/TaxiMasterDetailPage/NavigationPage/{PageName}");
+            }
         }
     }
 }
