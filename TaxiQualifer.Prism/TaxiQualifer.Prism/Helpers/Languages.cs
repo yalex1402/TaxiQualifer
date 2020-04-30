@@ -202,6 +202,7 @@ namespace TaxiQualifer.Prism.Helpers
 
         public static string MyTrips => Resource.MyTrips;
 
+        public static string Target => Resource.Target;
     }
 
 }
